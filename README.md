@@ -1,35 +1,65 @@
-# 8 Puzzle Search Algorithms
+# 8-Puzzle Search Algorithms
 
-Programming Workshop Assignment
+A small Python project that solves the 8-puzzle with four classic search strategies and prints the solution path and number of explored nodes.
 
-This project implements the 8-puzzle problem using:
-1. Breadth First Search (BFS)
-2. Depth First Search (DFS) with depth limit
-3. A* Search using Manhattan Distance
-4. Uniform Cost Search (UCS)
+## The puzzle
 
-## Requirements
-- Python 3
-- No external libraries
+Example start:
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 4 | _ | 6 |
+| 7 | 5 | 8 |
+
+Goal:
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 4 | 5 | 6 |
+| 7 | 8 | _ |
+
+The blank is represented by `0` when entering a board.
+
+## Algorithms
+
+| Script | Strategy |
+| --- | --- |
+| `bfs.py` | Breadth-First Search |
+| `dfs.py` | Depth-limited Depth-First Search |
+| `astar.py` | A* with Manhattan Distance |
+| `ucs.py` | Uniform Cost Search |
 
 ## Run
+
+Requires Python 3. No external packages are needed.
+
+```bash
 python bfs.py
 python dfs.py
 python astar.py
 python ucs.py
+```
 
-## Example Initial State
+Each script prompts for the initial board and goal board as three rows of numbers. For DFS, enter a maximum search depth when prompted.
+
+Example input:
+
+```text
+Initial state:
 1 2 3
 4 0 6
 7 5 8
 
-## Example Goal State
+Goal state:
 1 2 3
 4 5 6
 7 8 0
+```
 
-For DFS, enter a maximum depth such as 5.
+For this example, the solution is `down, right` (2 moves).
 
-Example solution:
-['down', 'right']
-Number of moves: 2
+## What it reports
+
+Each solver prints the path to the goal, the number of moves, and the number of nodes expanded.
+
+**Author:** Anish Bandaru
